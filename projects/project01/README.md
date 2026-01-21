@@ -1,7 +1,7 @@
 # BINF6250
 # Project01
 # Introduction
-Description of the project
+VCF file parsing
 
 # Pseudocode
 input: vcf file
