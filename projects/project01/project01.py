@@ -1,6 +1,40 @@
 
-def parse_line():
-    ...
+def parse_line(line):
+    """
+    Parses a VCF line to extract rare variant diseases.
+
+    Args:
+        line (str): A single line from a VCF file
+
+    Returns:
+        list: A list of diseases associated with rare variants
+    """
+    columns = line.split('\t')
+    if len(columns) < 8:
+        return []
+    info_column = columns[7]
+    info_parts = info_column.split(';')
+
+    info_dict = {}
+    for part in info_parts:
+        if '=' in part:
+            key, value = part.split('=')
+            info_dict[key] = value
+
+    af_exac = info_dict.get('AF_EXAC')
+    if af_exac is None:
+        return []
+    else:
+        af_exac_value = float(af_exac)
+
+    if af_exac_value < 0.0001:
+        clndn = info_dict.get('CLNDN')
+        diseases = [disease for disease in clndn.split('|') if disease not in ('not_specified', 'not_provided')]
+    else:
+        return []
+
+    return diseases
+
 
 def read_file(file_name):
     """
