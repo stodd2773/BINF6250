@@ -1,4 +1,5 @@
-
+#!/usr/bin/env python
+from pprint import pprint
 def parse_line(line):
     """
     Parses a VCF line to extract rare variant diseases.
@@ -69,5 +70,6 @@ def read_file(file_name):
                         disease_count[disease] = 1
 
     return disease_count
-            
-            
+
+if __name__ == "__main__":
+    pprint(read_file("clinvar_20190923_short.vcf"))
