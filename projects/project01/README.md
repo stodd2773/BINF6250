@@ -27,6 +27,7 @@ Main struggles were becoming acquainted with the use of Github for the class, an
 Key takeaway from this project was learning and understanding the group project structure from the perspective of the group leader. As a GitHub novice, I feel more comfortable navigating the use of GitHub in the future. I had less comfortability with aspects of the project, but leveraging open lines of communication and meetings with the group members, I feel my confidence and understanding of the task at hand was strengthened. 
 
 ## Other member
+Meghana: This project helped me get familiar with using GitHub since I hadn't really used it before this, especially in a collaborative way. I didn't really understand how to coordinate with my group on GitHub at first, but actually doing it made it easier for me to understand. This was the first time I worked in a team for a code-based project and I think it has helped improve my understanding of the process.
 Nick: My main takeaway from this project is getting used to the collaborative coding environment and open-source workflow. The necessary script itself is kept relatively simple, so that we can focus on the collaborative portion and get some practice before getting to more intense exercises. The parse_lines function also provides a good example of how a single function can be further modularized into many sub-components to make the code more adapatable and robust.
 
 # Generative AI Appendix
