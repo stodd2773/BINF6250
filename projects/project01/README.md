@@ -31,5 +31,4 @@ Meghana: This project helped me get familiar with using GitHub since I hadn't re
 Nick: My main takeaway from this project is getting used to the collaborative coding environment and open-source workflow. The necessary script itself is kept relatively simple, so that we can focus on the collaborative portion and get some practice before getting to more intense exercises. The parse_lines function also provides a good example of how a single function can be further modularized into many sub-components to make the code more adapatable and robust.
 
 # Generative AI Appendix
-As per the syllabus
-
+NA
