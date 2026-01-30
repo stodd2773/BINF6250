@@ -1,0 +1,68 @@
+
+if we're just starting, our model should be empty
+check if the input markov model is empty:
+|--> if yes, set a flag is_start to true
+|--> if no, say that the previous word was the endline character, \n
+
+check if the line we're looking at is an empty string ""
+|--> if yes, we're at the end of the file and are going to the end state, set a flag is_end to true
+|--> if not, nothing happens
+
+now pass the is_start and is_end flags to this function:
+
+
+
+
+First function: build_markov_model (not paramaterizing the order yet)
+Takes as input: 
+- a Markov model (dict of dicts) (does NOT have to be empty)
+- a string of text (expect this to be an entire line from a work of literature)
+- a list of the last N words in the previous line , where N is our order + 1
+- boolean indicating whether this is the first line of the file (is_start)
+- boolean indicating whether this is the end of the file (is_end)
+
+This function trains (adds to) a 0-order Markov model based on the inputted text
+Needs to NOT overwrite what's already in the model
+
+{str: {str: int}}
+
+At the start of working with this line, do all this:
+
+now we can split the line into separate words--> TODO account for punctuation (treat punctuation characters as their own words)
+[word, word, word, \n]
+
+
+*S* --> line                    happens at start of file
+\n from prev --> line           happens for all middle lines
+\n from prev --> *E*            happens after the last line of text
+
+iterate over the words' indices such that i+1 will always be in the list (go from index 0 to length-1)
+
+Call the helper function below, passing it word 1 and word 2
+|--> we can use word i for word 1 or overwrite it with whatever the start state or the previous word was from the previous line (because we have that in our arguments)
+|--> we can use word i+1 as word 2 or overwite it with the end state if we're at the end of the file
+
+Now that we've broken from the loop, we can return the updated dictionary of dicts
+make a list of the last N words in the line, where N is our order + 1) and return that too
+
+
+
+
+Make this a helper function that takes the dict of dicts, word i, and word i+1 as inputs:
+    access word i and word i+1
+    go into the outer dictionary and try to access the key for word i using dict.get()
+    |--> if it doesn't exit, pass dict.get() the default value of an empty dict
+    
+    Now the inner dict definitely exists but may not have the key
+
+    access the inner dictionary and attempt to access the key for word i+1 using dict.get()
+    |--> if it doesn't exist set the default to 0
+    set the value for this key in the inner dictionary to be 1 if it wasn't already in the dict, and add 1 to it if it already exists
+
+    return the updated dictionary
+    So this function gets called by assigning the dict of dicts to the value that this returns
+
+
+dict.get(key, default_value)
+dict[key] = dict.get(key, default_value={})
+dict[word2] = dict.get(word2, default_value=0) + 1
