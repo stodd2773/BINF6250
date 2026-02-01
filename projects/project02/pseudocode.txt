@@ -2,7 +2,7 @@
 if we're just starting, our model should be empty
 check if the input markov model is empty:
 |--> if yes, set a flag is_start to true
-|--> if no, say that the previous word was the endline character, \n
+|--> if no, say that the previous word was the start state
 
 check if the line we're looking at is an empty string ""
 |--> if yes, we're at the end of the file and are going to the end state, set a flag is_end to true
@@ -17,7 +17,7 @@ First function: build_markov_model (not paramaterizing the order yet)
 Takes as input: 
 - a Markov model (dict of dicts) (does NOT have to be empty)
 - a string of text (expect this to be an entire line from a work of literature)
-- a list of the last N words in the previous line , where N is our order + 1
+- a list of the last N words in the previous line , where N is our order
 - boolean indicating whether this is the first line of the file (is_start)
 - boolean indicating whether this is the end of the file (is_end)
 
