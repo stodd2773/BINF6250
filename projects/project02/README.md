@@ -81,14 +81,17 @@ Calculate transition probilities for all next states from a given state (counts/
 Description of the team's learning points
 
 # Struggles
-Description of the stumbling blocks the team experienced
+We were unaware that when numpy randomly chose a string from our dictionary of probabiilities, it would return a numpy string. This broke the comparison between the keys in the dictionary (which were normal strings) and the key composed of the last N randomly selected words (which got returned as numpy strings) and caused our model to fail to generate anything. 
+Our choice to have the end state only come after the end of the file (as opposed to at the end of each line or some other alternative), combined with the fact that each of these models is only trained on one file, meant that our model could only hit an end state and organically finish generating text when it generated the specific word or sequence of words that happened to be at the end of the training file. This led to our model generating large amounts of text until it would stumble into the only word or sequence of words that allowed it to break from its infinite loop, or (more realistically) it would run out of memory. The solution to this was a tweak that allowed the model to stop generating text if it generated a sequence of words that didn't exist in the training data (such a sequence would have no edges in our Markov model). 
 
 # Personal Reflections
 ## Group Leader
-Group leader's reflection on the project
+Spencer:
 
 ## Other member
-Other members' reflections on the project
+Chantera:
+
+Justin:
 
 # Generative AI Appendix
-As per the syllabus
+We did not use generative AI during this project. 
