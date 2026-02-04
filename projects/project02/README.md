@@ -92,7 +92,7 @@ Our choice to have the end state only come after the end of the file (as opposed
 Spencer: I appreciated working with both Chantera and Justin for this project as each posses strong critical thinking skills that facilitated the group towards implementing code that solved the problems at hand, and was backed up by well thought out planning. Every member of the team was flexible with their schedules, and we were able to all work on this project together, which I believed strengthened the final product.   
 
 ## Other member
-Chantera:
+Chantera: I enjoyed working with both Spencer and Justin. We were able to coordinate our schedule and truly be collaborative. We all took time outside of class to plan and code together, instead of the typical divide and conquer, and this allowed us to learn together and exchange ideas more effortlessly. When one of us had questions, the others in the group made sure to clear it up to ensure everyone was on the same page. 
 
 Justin: I am happy with how it went working with Chantera and Spencer. We were all able to coordinate to meet up multiple times outside of class and work in tandem over a teams meeting and discuss our perspectives on how to tackle the issues. I did my best to take initiative with starting the pseudocode and scripting in python to get the ball rolling at the start of our meetings, and I am glad that I was able to jumpstart our sessions and get discussion flowing by doing that. We did a great job of bouncing ideas off of each other and working through everything together, which is a lot more enjoyable than trying to divide and conquer. 
 
