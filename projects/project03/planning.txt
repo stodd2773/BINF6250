@@ -1,0 +1,58 @@
+Project03 conceptual overview
+P53 motif -> 10bp half-sites
+Given list of strings containing sequences from BAM file
+
+Each sequence, randomly select 10 sequential bp to be inital 'motif'
+Calculate position frequency matrix (PFM) for each sequence, use this to calculate position weight matrix (PWM)
+    - functions are provided to us in motif_ops.py
+choose another random sequence and omit from PFM. Recreate PFM & PWM w/out this sequence and score each possible motif in selected sequence against PWM (both selected sequence and reverse compliment
+    - score is derived from score_kmer.py in motif_ops.py
+    - rev comliment func in seq opt.
+randomly select new motif from scores. 
+
+iterate selecting new motifs each time until n iterations are reached or the change in PWM converges 
+
+
+
+------------------------------------  
+ 
+INITIALIZE PWM  
+  Tracking each sequences motif: 
+  - store the index of the first nucleotide in the motif
+        -if we are able to conserve the order of sequences, we could have a list of integers, where the integers are the index of the first nucleotide in the motif 
+  -store the list of sequences in a 'master list', which gives the ability to omit sequences by giving the index of that sequence. 
+
+  Selecting random motif for each sequence: 
+  - iterate through each sequence, selecting a starting position for each motif in the range of index[0]:index[-1] -10
+  - store random value in motif list given above where motif_list[0] gives the starting position of motif of first sequence at sequence_list[0] 
+
+  Calculate PFM and PWM:
+    - calulate PFM using pfm_build, which will take in a list of motifs and size of pfm (length of motif)
+            - to get list of motifs to feed into PFM: motif_seqs = [seq[motif:motif+k] for seq, motif in zip(seqss, motif_list)]
+    - calculate PWM using pwm_build which will take in our PFM
+
+ITERATION
+  Select random sequection
+    - Select random number, and random number = index of chosen sequence
+    - omit sequence from recalc of pfm and pwm 
+    - score each possible motif in sequence 
+      -> Executed via for loop: 
+          for each motif (positive strand) in the range of index[0]:index[-1] -10 use score kmer function to append to running list of scores
+          repeat for negative strands, append to list -- first 1/2 of list is all positive strand scores, 2nd 1/2 is negative strand     
+          return a list of scores
+
+    - from list of scores, randomly select for new position of motif 
+      -> use scores as weights via numpy.random.choice 
+      
+      ***FOR NUMPY RANDOM CHOICE TO WORK, WEIGHTS CANNOT BE NEGATIVE**** 
+        ideas:
+          -convert to probability
+          - transform so # always >=0 
+          
+
+  
+  
+
+
+
+    
