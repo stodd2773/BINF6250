@@ -1,0 +1,42 @@
+MOUSE GENOME ASSEMBLY STATISTICS
+
+Input File: /Users/biotechiestefnie/Desktop/project04/mouse_SE_150bp.fq.gz
+K-mer Size: 51
+Random Seed: 42
+
+INPUT DATA
+Number of reads: 1,000
+Average read length: 150.0 bp
+Estimated coverage: 0.0x
+
+GRAPH STATISTICS
+Nodes: 100,624
+Edges: 99,900
+
+ASSEMBLY RESULTS
+Number of contigs: 985
+Total assembly length: 148,554 bp
+N50: 150 bp
+Assembly fraction: 0.01%
+
+TOP 20 CONTIG LENGTHS
+1. 259 bp
+2. 257 bp
+3. 236 bp
+4. 232 bp
+5. 229 bp
+6. 227 bp
+7. 223 bp
+8. 213 bp
+9. 205 bp
+10. 193 bp
+11. 179 bp
+12. 151 bp
+13. 150 bp
+14. 150 bp
+15. 150 bp
+16. 150 bp
+17. 150 bp
+18. 150 bp
+19. 150 bp
+20. 150 bp
